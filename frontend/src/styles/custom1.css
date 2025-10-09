@@ -1,0 +1,149 @@
+/* Custom button, responsive - САЙЖРУУЛСАН */
+.custom-button {
+  @apply bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105;
+}
+
+.custom-button:active {
+  @apply scale-95;
+}
+
+@media (max-width: 640px) {
+  .custom-button {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Secondary button variant */
+.custom-button-secondary {
+  @apply bg-gray-100 text-gray-700 px-6 py-2.5 rounded-lg font-medium shadow-md hover:bg-gray-200 hover:shadow-lg transition-all duration-200 border border-gray-300;
+}
+
+/* Danger button variant */
+.custom-button-danger {
+  @apply bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg hover:from-red-600 hover:to-red-700 transition-all duration-200 transform hover:scale-105;
+}
+
+/* Success button variant */
+.custom-button-success {
+  @apply bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg hover:from-green-600 hover:to-green-700 transition-all duration-200 transform hover:scale-105;
+}
+
+/* Custom card - САЙЖРУУЛСАН */
+.custom-card {
+  @apply bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex flex-col md:flex-row items-center hover:shadow-xl transition-all duration-300;
+}
+
+.custom-card:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .custom-card {
+    @apply flex-col p-4;
+  }
+}
+
+/* Enhanced color scheme variants */
+.blue-card {
+  @apply bg-gradient-to-br from-blue-50 to-blue-100 text-blue-800 border-blue-200;
+}
+
+.green-card {
+  @apply bg-gradient-to-br from-green-50 to-green-100 text-green-800 border-green-200;
+}
+
+.yellow-card {
+  @apply bg-gradient-to-br from-yellow-50 to-yellow-100 text-yellow-800 border-yellow-200;
+}
+
+.red-card {
+  @apply bg-gradient-to-br from-red-50 to-red-100 text-red-800 border-red-200;
+}
+
+.purple-card {
+  @apply bg-gradient-to-br from-purple-50 to-purple-100 text-purple-800 border-purple-200;
+}
+
+/* Warning state - САЙЖРУУЛСАН */
+.warning-card {
+  @apply bg-gradient-to-br from-orange-50 to-orange-100 text-orange-800 border-2 border-orange-300 shadow-lg;
+}
+
+/* Global link style - САЙЖРУУЛСАН */
+.custom-link {
+  @apply text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200 font-medium;
+}
+
+/* Icon button styles */
+.icon-button {
+  @apply p-2 rounded-lg hover:bg-gray-100 transition-all duration-200 text-gray-600 hover:text-gray-800;
+}
+
+.icon-button:hover {
+  transform: scale(1.05);
+}
+
+/* Badge styles */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.badge-primary {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.badge-success {
+  @apply bg-green-100 text-green-800;
+}
+
+.badge-warning {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.badge-danger {
+  @apply bg-red-100 text-red-800;
+}
+
+/* Input styles */
+.custom-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200;
+}
+
+.custom-input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Loading animation */
+.loading-spinner {
+  @apply animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600;
+}
+
+/* Card header styles */
+.card-header {
+  @apply flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50 rounded-t-xl;
+}
+
+.card-title {
+  @apply text-lg font-semibold text-gray-800;
+}
+
+.card-body {
+  @apply p-4;
+}
+
+/* Notification styles */
+.notification {
+  @apply fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 flex items-center space-x-3;
+}
+
+.notification-success {
+  @apply bg-green-500 text-white;
+}
+
+.notification-error {
+  @apply bg-red-500 text-white;
+}
+
+.notification-info {
+  @apply bg-blue-500 text-white;
+}

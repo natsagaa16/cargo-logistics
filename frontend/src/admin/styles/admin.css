@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Admin Layout */
+.admin-layout {
+  @apply min-h-screen flex flex-col;
+}
+
+.admin-container {
+  @apply flex flex-1 relative;
+}
+
+/* Admin Panel */
+.admin-panel {
+  @apply flex h-screen bg-gray-100;
+}
+
+/* Sidebar */
+.admin-sidebar {
+  @apply w-64 bg-gradient-to-b from-gray-900 to-gray-800 text-white fixed overflow-y-auto transition-all duration-300 z-20 shadow-xl;
+  top: 64px;
+  height: calc(100vh - 64px);
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    @apply -left-64;
+  }
+  .admin-sidebar.open {
+    @apply left-0;
+  }
+}
+
+.sidebar-content {
+  @apply p-4;
+}
+
+.sidebar-menu {
+  @apply space-y-1;
+}
+
+.sidebar-item {
+  @apply flex items-center px-3 py-2.5 rounded-lg hover:bg-gray-700/50 transition-all duration-200 text-sm font-medium gap-3 relative;
+}
+
+.sidebar-item:hover {
+  @apply text-white;
+  transform: translateX(4px);
+}
+
+.sidebar-item.active {
+  @apply bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg border-l-4 border-white;
+}
+
+.sidebar-icon {
+  @apply w-5 h-5 text-gray-400 transition-colors;
+}
+
+.sidebar-item:hover .sidebar-icon,
+.sidebar-item.active .sidebar-icon {
+  @apply text-white;
+}
+
+.sidebar-text {
+  @apply text-gray-300 transition-colors;
+}
+
+.sidebar-item:hover .sidebar-text,
+.sidebar-item.active .sidebar-text {
+  @apply text-white;
+}
+
+/* Topbar */
+.admin-topbar {
+  @apply bg-white shadow-lg border-b border-gray-200 px-4 py-3 fixed w-full z-30 flex justify-between items-center top-0;
+  backdrop-filter: blur(10px);
+}
+
+.topbar-brand {
+  @apply flex items-center space-x-2 sm:space-x-3;
+}
+
+.topbar-logo {
+  @apply w-8 h-8 md:w-10 md:h-10 object-contain;
+}
+
+.brand-text {
+  @apply text-lg md:text-xl font-bold text-gray-800;
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hamburger {
+  @apply cursor-pointer text-2xl p-2 rounded-lg hover:bg-gray-100 transition-all text-gray-700;
+}
+
+/* Notifications */
+.notification-btn {
+  @apply relative p-2 rounded-lg hover:bg-gray-100 transition-all text-gray-600 hover:text-gray-800;
+}
+
+.notification-badge {
+  @apply absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold;
+}
+
+.notification-dropdown {
+  @apply absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50;
+}
+
+.notification-header {
+  @apply px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg;
+}
+
+.notification-title {
+  @apply text-sm font-semibold text-gray-800;
+}
+
+.notification-list {
+  @apply max-h-60 overflow-y-auto;
+}
+
+.notification-item {
+  @apply px-4 py-3 border-b border-gray-100 hover:bg-gray-50 transition-colors;
+}
+
+.notification-message {
+  @apply text-sm text-gray-800 mb-1;
+}
+
+.notification-time {
+  @apply text-xs text-gray-500;
+}
+
+.notification-footer {
+  @apply p-3 bg-gray-50 rounded-b-lg border-t border-gray-200;
+}
+
+.notification-see-all {
+  @apply w-full text-center text-sm text-blue-600 hover:text-blue-800 font-medium;
+}
+
+/* Profile */
+.profile-btn {
+  @apply flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-all;
+}
+
+.profile-avatar {
+  @apply w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white;
+}
+
+.profile-name {
+  @apply hidden md:block text-gray-700 font-medium text-sm;
+}
+
+.profile-arrow {
+  @apply w-4 h-4 text-gray-500 transition-transform duration-200;
+}
+
+.profile-dropdown {
+  @apply absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-200 z-50;
+}
+
+.profile-dropdown-header {
+  @apply flex items-center space-x-3 px-4 py-3 border-b border-gray-200 bg-gray-50 rounded-t-lg;
+}
+
+.profile-avatar-large {
+  @apply w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white;
+}
+
+.profile-dropdown-name {
+  @apply text-sm font-semibold text-gray-800;
+}
+
+.profile-dropdown-email {
+  @apply text-xs text-gray-500;
+}
+
+.profile-dropdown-menu {
+  @apply py-2;
+}
+
+.profile-dropdown-item {
+  @apply w-full flex items-center space-x-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors;
+}
+
+.profile-dropdown-divider {
+  @apply my-2 border-gray-200;
+}
+
+/* Barcode container styling */
+.barcode-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .modal-overlay {
+    position: static;
+    background: white;
+  }
+  
+  .modal-content {
+    max-width: 100%;
+    max-height: none;
+    box-shadow: none;
+  }
+  
+  .print-header {
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+  }
+  
+  .barcode-container {
+    page-break-inside: avoid;
+    margin: 20px 0;
+  }
+}
+
+/* Main Content */
+.admin-main {
+  @apply flex-1 overflow-y-auto;
+  margin-left: 0;
+  margin-top: 64px;
+}
+
+@media (min-width: 769px) {
+  .admin-main {
+    @apply ml-64;
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .admin-topbar {
+    @apply px-3 py-2;
+  }
+}
