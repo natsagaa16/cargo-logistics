@@ -1,4 +1,4 @@
-//backend/index.js - 1-Р ХЭСЭГ
+//backend/index.js - 1-Р ХЭСЭГ -1
 import 'dotenv/config';
 import express from 'express';
 import mysql from 'mysql2/promise';
