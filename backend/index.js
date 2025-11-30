@@ -1,4 +1,4 @@
-//backend/index.js - 1-Р ХЭСЭГ -1 - test
+//backend/index.js
 import 'dotenv/config';
 import express from 'express';
 import mysql from 'mysql2/promise';
@@ -1208,7 +1208,7 @@ app.get('/api/containers-new/:id/history', authenticate, async (req, res) => {
 // ==================== ХАДГАЛАЛТЫН ХӨЛС ТООЦООЛОХ ФУНКЦ ====================
 async function calculateStorageFee(cargo) {
   if (cargo.status === 'distributed') {
-    // ЗАСВАР: distributed бол stored value ашигла
+    
     return {
       storage_days: cargo.storage_days || 0,
       storage_fee_amount: cargo.storage_fee_amount || 0,

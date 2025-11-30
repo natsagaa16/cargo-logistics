@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaUser, FaSignOutAlt, FaBell, FaChevronDown, FaCog } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-import axiosInstance from '../../axios';  // ✅ ЗӨВ path
+import axiosInstance from '../../axios'; 
 import '../styles/admin.css';
 
 const Header = ({ toggleSidebar }) => {

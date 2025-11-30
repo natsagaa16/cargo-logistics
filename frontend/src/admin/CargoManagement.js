@@ -110,8 +110,8 @@ const CargoManagement = () => {
   cargoForm.width_cm,
   cargoForm.height_cm,
   cargoForm.total_pieces,
-  cargoForm.is_manual_price,  // ШИНЭ: Гараас оруулах төлвийг шалгах
-  cargoForm.manual_price      // ШИНЭ: Гараас оруулсан үнийг шалгах
+  cargoForm.is_manual_price,  
+  cargoForm.manual_price      
 ]);
 
   useEffect(() => {
@@ -153,7 +153,7 @@ const CargoManagement = () => {
     return;
   }
 
-  // ШИНЭ: Гараас оруулсан бол manual_price-г ашигла
+  
   if (cargoForm.is_manual_price) {
     const totalPrice = parseFloat(cargoForm.manual_price || 0).toFixed(2);
     const container = containers.find(c => c.id == cargoForm.container_id);
@@ -166,7 +166,7 @@ const CargoManagement = () => {
     return;
   }
 
-  // Автомат тооцоолол (хуучнаар үлдээв)
+  
   const container = containers.find(c => c.id == cargoForm.container_id);
   if (!container) return;
   let unitPrice = 0;
@@ -451,7 +451,7 @@ const CargoManagement = () => {
   const handleStatusChange = async () => {
     if (!newSelectedStatus) return;
     
-    // Distributed төлөвт шилжих үед төлбөрийн хэлбэр шаардлагатай
+    
     if (newSelectedStatus === 'distributed' && selectedCargo.status !== 'distributed') {
       if (!paymentData.method) {
         alert('Төлбөрийн хэлбэр сонгоно уу!');
@@ -497,7 +497,7 @@ const CargoManagement = () => {
         data.cargo_codes = response.data.batch_cargos.map(b => b.cargo_code) || [data.cargo_code];
         setSelectedCargo(data);
         setShowDetailModal(true);
-        // Төлөвийн түүх татах
+        
         await fetchCargoHistory(cargo.id);
       }
     } catch (error) {
@@ -518,7 +518,7 @@ const CargoManagement = () => {
     setNewSelectedStatus(cargo.status);
     setShowStatusModal(true);
     
-    // Дэлгэрэнгүй мэдээлэл + storage fee тооцоолох
+    
     try {
       const response = await axiosInstance.get(`/api/cargo-new/${cargo.id}`);
       if (response.data.success) {

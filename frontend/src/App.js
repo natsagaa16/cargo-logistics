@@ -5,8 +5,7 @@ import Dashboard from './admin/Dashboard';
 import ContainerManagement from './admin/ContainerManagement';
 import CargoManagement from './admin/CargoManagement';
 import CategoryManagement from './admin/CategoryManagement';
-import PaymentManagement from './admin/PaymentManagement'; // 🆕 НЭМЭХ
-import axiosInstance from './axios';
+import PaymentManagement from './admin/PaymentManagement';
 import Sidebar from './components/Sidebar';
 import TopBar from './components/TopBar1';
 import Footer from './components/Footer';
@@ -27,7 +26,7 @@ export default function App() {
           <Route path="cargo" element={<CargoManagement />} />
           <Route path="categories" element={<CategoryManagement />} />
           
-          {/* 🆕 ШИНЭЧИЛСЭН - Төлбөр тооцоо */}
+      
           <Route path="payment" element={<PaymentManagement />} />
           
           <Route path="reports" element={<ComingSoon title="Тайлан" />} />
@@ -108,7 +107,7 @@ function ComingSoon({ title }) {
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">{title}</h1>
         <p className="text-gray-600 mb-6">Энэ хуудас хөгжүүлэгдэж байна...</p>
         <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-lg text-sm">
-          Удахгүй бэлэн болно
+       
         </div>
       </div>
     </div>

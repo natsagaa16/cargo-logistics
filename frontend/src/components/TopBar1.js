@@ -42,7 +42,7 @@ const TopBar = ({ toggleSidebar }) => {
     <header className="admin-topbar">
       <div className="w-full flex items-center justify-between">
         
-        {/* Зүүн хэсэг - Hamburger болон Logo */}
+        
         <div className="flex items-center space-x-2 sm:space-x-4">
           <button
             onClick={toggleSidebar}
@@ -52,7 +52,7 @@ const TopBar = ({ toggleSidebar }) => {
             <FaBars />
           </button>
           
-          {/* Logo болон Brand */}
+         
           <div className="topbar-brand flex items-center space-x-2 sm:space-x-3">
             <img 
               src="/logo.png" 
@@ -64,13 +64,13 @@ const TopBar = ({ toggleSidebar }) => {
             />
             <h1 className="brand-text">
               <span className="hidden sm:inline">Жим Гүн Трэйд ХХК</span>
-              {/* <span className="hidden sm:inline">Карго админ панел</span> */}
+              
               <span className="sm:hidden">ЖГТ</span>
             </h1>
           </div>
         </div>
 
-        {/* Баруун хэсэг - Notifications болон User Menu */}
+        
         <div className="flex items-center space-x-2 sm:space-x-4">
           
           {/* Notifications Dropdown */}

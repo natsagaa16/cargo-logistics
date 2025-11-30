@@ -284,7 +284,7 @@ const PaymentManagement = () => {
   };
 
   const formatCurrency = (amount, currency = 'KRW') => {
-    // ЗАСВАР: Зай нэмж, жижиг symbol болгосон
+    
     const symbols = {
       KRW: '₩',
       MNT: '₮',

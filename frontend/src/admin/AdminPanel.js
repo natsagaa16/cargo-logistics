@@ -9,7 +9,7 @@ import {
   FaSearch,
   FaFilter
 } from 'react-icons/fa';
-import axiosInstance from '../axios'; // axios-ийг axiosInstance болгож засав
+import axiosInstance from '../axios'; 
 import '../styles/admin.css';
 import '../styles/custom.css';
 
@@ -25,7 +25,7 @@ export default function AdminPanel() {
   const [selectedStatus, setSelectedStatus] = useState('all');
 
   useEffect(() => {
-    // Ачааны жагсаалт статик жишээ (сүүлд axiosInstance.get('/cargo')-аар солих)
+    
     setCargoList([
       { id: 1, kod: 'SU250918-001', status: 'registered', weight: 10, fee: 5000, date: '2025-09-18', destination: 'Улаанбаатар' },
       { id: 2, kod: 'EXP250918-002', status: 'shipped', weight: 20, fee: 10000, date: '2025-09-18', destination: 'Дархан' },

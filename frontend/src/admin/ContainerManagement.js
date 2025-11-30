@@ -331,10 +331,10 @@ const ContainerManagement = () => {
     if (response.data.success) {
       const data = response.data;
       
-      // ЗАСВАР: Багцаар групплэж, давхардсан үнийг арилгах
+      
       const groupedBatches = groupCargosByBatch(data.cargos);
       
-      // Дахин тооцоолох - багц бүрээр 1 удаа
+      
       const totalCargoPrice = groupedBatches.reduce((sum, batch) => {
         const basePrice = batch.is_manual_price ? 
           parseFloat(batch.manual_price || 0) : 

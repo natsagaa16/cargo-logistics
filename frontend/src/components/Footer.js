@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="admin-footer">
       <div className="footer-compact">
         <p className="footer-text">
-          {/* © {currentYear} Жим Гүн Трэйд ХХК. Бүх эрх хуулиар хамгаалагдсан. */}
+          
           © {currentYear} Карго админ. Бүх эрх хуулиар хамгаалагдсан.
         </p>
       </div>
