@@ -1286,9 +1286,9 @@ async function calculateStorageFee(cargo) {
     total_with_storage: parseFloat((basePrice + storageFeeAmount).toFixed(2))
   };
 }
-//backend/index.js - 2-Р ХЭСЭГ (1-р хэсгийн үргэлжлэл)
 
-// ==================== CARGO APIs - ЗӨВИЙН ДАРААЛАЛТАЙ ====================
+
+// ==================== CARGO APIs -  ====================
 
 async function generateCargoCode(container_id, total_pieces) {
   try {
@@ -1326,7 +1326,7 @@ async function generateCargoCode(container_id, total_pieces) {
   }
 }
 
-// 1️⃣ ТАРААГДААГҮЙ АЧААНЫ ЖАГСААЛТ (ЭХЭНД)
+
 app.get('/api/cargo-new/pending', authenticate, async (req, res) => {
   try {
     const { container_id, search } = req.query;
@@ -1405,7 +1405,7 @@ app.get('/api/cargo-new/pending', authenticate, async (req, res) => {
   }
 });
 
-// 2️⃣ АЧААНЫ ЕРӨНХИЙ ЖАГСААЛТ
+
 app.get('/api/cargo-new', authenticate, async (req, res) => {
   try {
     const { container_id, search, status, page = 1, page_size = 20 } = req.query;
@@ -1467,7 +1467,7 @@ app.get('/api/cargo-new', authenticate, async (req, res) => {
    
     const [rows] = await dbPool.query(query, params);
    
-    // ЗАСВАР: cargosWithFees-д storage_fee тооцож нэмэх
+ 
     const cargosWithFees = await Promise.all(rows.map(async (cargo) => {
       const storageInfo = await calculateStorageFee(cargo);
       return {
@@ -1491,7 +1491,7 @@ app.get('/api/cargo-new', authenticate, async (req, res) => {
   }
 });
 
-// 3️⃣ НЭГЖ АЧААНЫ ДЭЛГЭРЭНГҮЙ (:id параметртэй маршрут СҮҮЛД)
+
 app.get('/api/cargo-new/:id', authenticate, async (req, res) => {
   const { id } = req.params;
   
@@ -1912,7 +1912,7 @@ app.patch('/api/cargo-new/:id/distribute', authenticate, checkRole(['system_admi
     const cargoPrice = cargo.is_manual_price ? parseFloat(cargo.manual_price || 0) : parseFloat(cargo.price || 0);
     const totalAmount = cargoPrice + parseFloat(storageInfo.storage_fee_amount || 0);
    
-    // ЗАСВАР: storage_fee_amount, storage_days-г cargo_new-д хадгалах
+  
     await connection.query(
       'UPDATE cargo_new SET storage_fee_amount = ?, storage_days = ? WHERE batch_number = ?',
       [storageInfo.storage_fee_amount, storageInfo.storage_days, cargo.batch_number]
